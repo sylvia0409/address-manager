@@ -1,0 +1,39 @@
+<div class="add-card">
+  <p mat-dialog-title>新增 IP</p>
+<div mat-dialog-content>
+  <p class="title">
+    <span style="color: red">*</span>
+    分配 IP
+  </p>
+    <mat-form-field appearance="outline">
+      <mat-label>
+        起始 IP
+      </mat-label>
+      <input matInput [(ngModel)]="data.ip['ipStart']" autocomplete=”off” [formControl]="ipStartControl" required>
+      <mat-error *ngIf="ipStartControl.hasError('required')"> 必填</mat-error>
+    </mat-form-field>
+  <mat-form-field appearance="outline" class="end">
+      <mat-label>
+        结束 IP
+      </mat-label>
+      <input matInput [(ngModel)]="data.ip['ipEnd']" autocomplete=”off” [formControl]="ipEndControl" required>
+    <mat-error *ngIf="ipEndControl.hasError('required')">必填</mat-error>
+    </mat-form-field>
+  <p class="title">
+    <span style="color: red">*</span>
+    租户
+  </p>
+    <mat-form-field appearance="outline">
+      <mat-select [(ngModel)]="data.ip['tenant']" [formControl]="tenantControl" required>
+        <mat-option *ngFor="let tenant of tenants" [value]="tenant">
+          {{tenant}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="tenantControl.hasError('required')">请选择租户</mat-error>
+    </mat-form-field>
+  </div>
+<div mat-dialog-actions class="action">
+  <button mat-button (click)="onNoClick()">取消</button>
+  <button mat-button [mat-dialog-close]="data.ip" color="primary">确定</button>
+</div>
+</div>

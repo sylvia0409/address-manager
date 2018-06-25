@@ -1,0 +1,25 @@
+<div class="add-card">
+  <p mat-dialog-title>新增网关子网</p>
+  <div mat-dialog-content>
+    <p class="title">
+      <span style="color: red">*</span>
+      子网
+    </p>
+    <mat-form-field appearance="outline" id="add-1">
+      <input matInput [(ngModel)]="data.gateway['gateway']" autocomplete=”off” placeholder=" 子网，例如192.168.5.0/23" [formControl]="gatewayControl" required>
+      <mat-error *ngIf="gatewayControl.hasError('required')"> 必填</mat-error>
+    </mat-form-field>
+    <p class="title">
+      <span style="color: red">*</span>
+      网关
+    </p>
+    <mat-form-field appearance="outline" id="add-2">
+      <input matInput [(ngModel)]="data.gateway['subnet']" autocomplete=”off” placeholder=" 网关，例如192.168.5.1" [formControl]="subnetControl" required>
+      <mat-error *ngIf="subnetControl.hasError('required')">必填</mat-error>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions class="action">
+    <button mat-button (click)="onNoClick()">取消</button>
+    <button mat-button [mat-dialog-close]="data.gateway" color="primary">确定</button>
+  </div>
+</div>

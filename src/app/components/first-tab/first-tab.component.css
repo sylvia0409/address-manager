@@ -1,0 +1,70 @@
+.mat-toolbar {
+  font: 500 14px/32px Roboto,"Helvetica Neue",sans-serif;
+  background-color: white;
+  margin-top: 20px;
+  padding: 0 5px;
+}
+
+.mat-button {
+  height: 43px;
+  font-size: 16px;
+  font-weight: 400;
+  border: solid 1px;
+  border-radius: 4px;
+  margin-bottom: 11px;
+  margin-left: 30px;
+  min-width: 10px;
+  padding: 0 12px;
+}
+
+.mat-input {
+  margin-top: 10px;
+}
+
+.mat-form-field {
+  width: 22%;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+#refresh-img  {
+  margin-bottom: 2px;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-elevation-z8 {
+  margin: 20px 5px;
+}
+
+.mat-header-cell {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+/*第一列宽度*/
+th.mat-header-cell.cdk-column-IP--.mat-column-IP--.ng-star-inserted {
+  width: 21%;
+}
+/*第二列宽度*/
+th.mat-header-cell.cdk-column-Pod.mat-column-Pod.ng-star-inserted {
+  width: 21%;
+}
+/*第三列宽度*/
+th.mat-header-cell.cdk-column-application.mat-column-application.ng-star-inserted {
+  width: 21%;
+}
+/*第四列宽度*/
+th.mat-header-cell.cdk-column-service.mat-column-service.ng-star-inserted {
+  width: 21%;
+}
+/*第五列宽度*/
+th.mat-header-cell.cdk-column-tenant.mat-column-tenant.ng-star-inserted {
+  width: 15%;
+}
+
+::ng-deep mat-form-field.mat-paginator-page-size-select {
+  text-align: center !important;
+}

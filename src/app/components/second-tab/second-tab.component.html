@@ -1,0 +1,38 @@
+<mat-toolbar class="first-line">
+  <mat-form-field>
+    <mat-select [(ngModel)]="currentTenant">
+      <mat-option *ngFor="let tenant of tenants" [value]="tenant" (click)="getUnassignedIp(tenant)">
+        {{tenant}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <span class="toolbar-spacer"></span>
+<button mat-button color="primary" id="add-button" (click)="addIpAddress()">
+  <i class="material-icons" id="add-img">add</i>
+  新增 IP
+</button>
+<button mat-button color="warn" id="delete-button" (click)="deleteIpAddress()">
+  <i class="material-icons">delete</i>
+</button>
+</mat-toolbar>
+<!--表单-->
+<div *ngIf="currentTenant" class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" [formGroup]="surveyForm">
+    <ng-container matColumnDef="unassigned-ip">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox formControlName="title" (change)="selectedAll($event)" color="warn"></mat-checkbox>
+        未分配 IP
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-checkbox [id]="element.id" [formControlName]="element.id"
+                      (change)="selectedSome($event, element)"
+                      color="warn">
+        </mat-checkbox>
+        {{element.address}}
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[10, 15, 20]" class="paginator"></mat-paginator>
+</div>

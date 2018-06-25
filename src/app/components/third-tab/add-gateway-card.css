@@ -1,0 +1,49 @@
+.add-card {
+  padding: 5% 10%;
+}
+.mat-dialog-title {
+  margin-left: 29%;
+  letter-spacing: 1px;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.title {
+  font-size: 18px;
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+.mat-form-field {
+  width: 300px;
+}
+
+.action {
+  margin: 0 auto;
+}
+
+.action.mat-dialog-actions {
+  padding-top: 15%;
+  padding-left: 12%;
+}
+
+button {
+  border: solid 1px;
+  border-radius: 4px;
+  padding: 0 8px;
+}
+
+.mat-button {
+  height: 45px;
+  width: 100px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 4px;
+}
+
+button.mat-button.mat-primary {
+  margin-left: 45px;
+}
+
+mat-error {
+  font-size: 14px;
+}

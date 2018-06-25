@@ -1,0 +1,32 @@
+<button mat-button color="primary" class="icon" id="add-button" (click)="addGateway()">
+  <i class="material-icons" id="add-img">add</i>
+  新增网关子网
+</button>
+<button mat-button color="warn" class="icon" id="delete-button" (click)="deleteGateway()">
+  <i class="material-icons">delete</i>
+</button>
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" [formGroup]="surveyForm">
+    <!-- Gateway Column -->
+    <ng-container matColumnDef="Gateway">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox formControlName="title" (change)="selectedAll($event)" color="warn"></mat-checkbox>
+        网关
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-checkbox [id]="element.id" [formControlName]="element.id" (change)="selectedSome($event, element)" color="warn"></mat-checkbox>
+        {{element.gateway}}
+      </td>
+    </ng-container>
+    <!-- Subnet Column -->
+    <ng-container matColumnDef="Subnet">
+      <th mat-header-cell *matHeaderCellDef> 子网 </th>
+      <td mat-cell *matCellDef="let element"> {{element.subnet}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[10, 15, 20]" class="paginator"></mat-paginator>
+</div>

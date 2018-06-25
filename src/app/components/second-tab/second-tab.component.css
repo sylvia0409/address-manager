@@ -1,0 +1,64 @@
+mat-select {
+  margin-top: 20px;
+}
+
+.mat-form-field-flex {
+  height: 20px;
+}
+
+.mat-button {
+  height: 40px;
+  font-size: 16px;
+  font-weight: 400;
+  border: solid 1px;
+  border-radius: 4px;
+  padding: 0 8px;
+  margin-top: 5px;
+}
+
+.first-line {
+  background-color: white;
+  margin-top: 5px;
+}
+
+mat-select {
+  font-size: 17px;
+  text-align: center;
+}
+
+mat-form-field {
+  width: 140px;
+}
+
+#add-img {
+  margin-bottom: 2px;
+}
+
+#add-button{
+  margin-right: 20px;
+  width: 110px;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-elevation-z8 {
+  margin: 30px 5px;
+  text-align: center;
+}
+
+.mat-header-cell {
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+}
+
+mat-checkbox {
+  float: left;
+}
+
